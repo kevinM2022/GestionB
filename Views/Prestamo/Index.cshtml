@@ -1,0 +1,101 @@
+﻿@model IEnumerable<PrestamoDto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaPrestamo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaDevolucionEsperada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LibroId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TituloLibro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UsuarioId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreUsuario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DespachadorId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreDespachador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SancionId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ConceptoSancion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MontoSancion)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaPrestamo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaDevolucionEsperada)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LibroId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TituloLibro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UsuarioId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DespachadorId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreDespachador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SancionId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConceptoSancion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MontoSancion)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PrestamoId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PrestamoId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PrestamoId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

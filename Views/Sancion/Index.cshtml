@@ -1,0 +1,53 @@
+﻿@model IEnumerable<SancionDto>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Concepto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Monto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrestamoId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LibroId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Concepto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Monto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrestamoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LibroId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.SancionId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SancionId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SancionId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
